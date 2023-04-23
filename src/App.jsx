@@ -41,7 +41,8 @@ const App = () => {
 
   return (
 
-      <Routes>
+    <Routes>
+        <Route path="/auth" element={<LoginScreen />} /> 
         <Route
           path="/"
           element={
@@ -51,7 +52,6 @@ const App = () => {
           }
         />
 
-        <Route path="/auth" element={<LoginScreen />} />
 
         <Route
           path="/search"

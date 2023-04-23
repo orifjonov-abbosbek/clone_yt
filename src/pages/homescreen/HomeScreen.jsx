@@ -12,8 +12,7 @@ const HomeScreen = () => {
     dispatch(getPopularVideos());
   }, [dispatch]);
 
-  const {videos} = useSelector((state) => state.homeVideos);
-  console.log(videos);
+  const {videos} = useSelector(state => state.homeVideos);
 
   return (
     <>
@@ -21,7 +20,7 @@ const HomeScreen = () => {
         <CategoriesBar />
 
         <Row>
-          {videos.map((video) => (
+          {videos?.map((video) => (
             <Col lg={3} md={4} key={video.id}>
               <Video video={video} />
             </Col>

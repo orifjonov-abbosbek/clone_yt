@@ -1,11 +1,12 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Header from "./components/header/header";
 import Sidebar from "./components/sidebar/sidebar";
 import HomeScreen from "./pages/homescreen/HomeScreen";
 import { Container } from "react-bootstrap";
 import "./App.scss";
 import LoginScreen from "./pages/loginScreen/LoginScreen";
-import { BrowserRouter, Route, Routes  } from "react-router-dom";
+import {  Route, Routes, useNavigate  } from "react-router-dom";
+import { useSelector } from "react-redux";
 const Layout = ({ children }) => {
   const [sidebar, setSidebar] = useState(false);
 
@@ -22,8 +23,24 @@ const Layout = ({ children }) => {
   );
 };
 const App = () => {
+ 
+   const  data = useSelector(state => state.auth)
+
+   console.log(data);
+   const navigate = useNavigate()
+
+   useEffect(()=> {
+        
+    if(!data.loading && !data.accessToken) {
+     navigate('/auth')      
+    }
+    
+   }, [data.accessToken, data.loading])
+
+
+
   return (
-    <BrowserRouter>
+
       <Routes>
         <Route
           path="/"
@@ -46,7 +63,7 @@ const App = () => {
         />
 
       </Routes>
-    </BrowserRouter>
+
   );
 };
 

@@ -6,7 +6,7 @@ const Video = () => {
     <div className="video">
       <div className="video__top">
         <img
-        style={{width:'360px', height: '203px'}}
+        style={{width:'250px', height: '150px'}}
           src="https://lh3.googleusercontent.com/58AB68tTCEpCxtghdbKnEol2VwD74QeIJMI7a9oqvSMQLWc2XQFFNfuKYT9zPShpcXu3yqun-u4SzMkVwhg6OKpvvg=w640-h400-e365-rj-sc0x00ffffff"
           alt=""
         />

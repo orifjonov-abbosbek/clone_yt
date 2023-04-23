@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Mulish:wght@400;700&display=swap");
 
 $text-color: #b1bdb4;
 $black-primary: #16181b;
@@ -9,17 +9,26 @@ $text-colorL: #b1bdb4;
 $breakpoint-medium: 1224px;
 $breakpoint-small: 520px;
 
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-body{
-    background-color: $black-primary;
-    background-attachment: fixed;
-    color: $text-color;
-    font-family: 'Mulish', sans-serif;
-    letter-spacing: 0.1px;
+body {
+  background-color: $black-primary;
+  background-attachment: fixed;
+  color: $text-color;
+  font-family: "Mulish", sans-serif;
+  letter-spacing: 0.1px;
 }
 
+@mixin line-clamp($number) {
+  display: -webkit-box;
+  -webkit-line-clamp: $number;
+  -webkit-box-orient: vertical;
+}
+
+::-webkit-scrollbar{
+        width: 0;
+    }

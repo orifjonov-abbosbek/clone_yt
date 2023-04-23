@@ -9,9 +9,12 @@ import {
   MdHome,
   MdSentimentDissatisfied,
 } from "react-icons/md";
-const Sidebar = ({sidebar}) => {
+const Sidebar = ({ sidebar, handleToggleSidebar }) => {
   return (
-    <nav className={sidebar ? 'sidebar open' : 'sidebar'}>
+    <nav
+      className={sidebar ? "sidebar open" : "sidebar"}
+      onClick={() => handleToggleSidebar(false)}
+    >
       <ul>
         <li>
           <MdHome size={23} /> <span>Home</span>{" "}
@@ -25,7 +28,6 @@ const Sidebar = ({sidebar}) => {
         <li>
           <MdHistory size={23} /> <span>History</span>{" "}
         </li>
-
 
         <li>
           <MdLibraryBooks size={23} />

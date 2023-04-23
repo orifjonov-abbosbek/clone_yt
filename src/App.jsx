@@ -14,7 +14,7 @@ const App = () => {
       <Header handleToggleSidebar={handleToggleSidebar} />
 
       <div className="app__container border border-info">
-        <Sidebar sidebar={sidebar}/>
+        <Sidebar sidebar={sidebar} handleToggleSidebar={handleToggleSidebar} />
         <Container className="app__main border border-warning">
           <HomeScreen />
         </Container>

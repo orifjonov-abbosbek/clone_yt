@@ -12,6 +12,7 @@ const Header = ({ handleToggleSidebar }) => {
         className="header__menu"
         size={26}
         onClick={()=> handleToggleSidebar()}
+        style={{cursor: 'pointer'}}
       />
       <img src={Logo} alt="" className="header__logo color-white" />
       <form>

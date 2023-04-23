@@ -14,7 +14,7 @@ export const authReducer = (prevState = initialState, action) => {
       return {
         ...prevState,
         loading: true,
-      };
+      }
 
     case LOGIN_SUCCESS:
       return {

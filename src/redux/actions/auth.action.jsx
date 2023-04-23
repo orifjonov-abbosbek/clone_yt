@@ -2,7 +2,7 @@ import { auth, provider } from "../../firebase";
 
 import { signInWithPopup } from "firebase/auth";
 import {
-    
+
   LOAD_PROFILE,
   LOGIN_FAIL,
   LOGIN_REQUEST,
@@ -18,7 +18,7 @@ export const Login = () => async (dispatch) => {
 
     console.log(res);
 
-    const accessToken = res.accessToken;
+    const accessToken = res.user.accessToken;
     const profile = {
       name: res.user.displayName,
       photoURL: res.user.photoURL,

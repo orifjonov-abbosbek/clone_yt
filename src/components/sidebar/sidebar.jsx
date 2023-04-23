@@ -9,9 +9,9 @@ import {
   MdHome,
   MdSentimentDissatisfied,
 } from "react-icons/md";
-const Sidebar = () => {
+const Sidebar = ({sidebar}) => {
   return (
-    <nav className="border border-danger sidebar">
+    <nav className={sidebar ? 'sidebar open' : 'sidebar'}>
       <ul>
         <li>
           <MdHome size={23} /> <span>Home</span>{" "}

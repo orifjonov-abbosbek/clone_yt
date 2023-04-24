@@ -2,8 +2,8 @@ import React, { useEffect, useState } from "react";
 import "./video.scss";
 import moment from "moment";
 import { AiFillEye } from "react-icons/ai";
-import request from "../../api";
 import numeral from "numeral";
+import request from "../../api";
 const Video = ({ video }) => {
   const {
     id,

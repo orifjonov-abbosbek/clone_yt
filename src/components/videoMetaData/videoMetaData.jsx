@@ -5,24 +5,28 @@ import { MdThumbUp, MdThumbDown } from "react-icons/md";
 import ShowMoreText from "react-show-more-text";
 import "./videoMetaData.scss";
 
-const VideoMetaData = () => {
+const VideoMetaData = ({ video: { snippet, statistics }, videoId }) => {
+  const { channelId, channelTitle, description, title, publishedAt } = snippet;
+
+  const { viewCount, likeCount, dislikeCount } = statistics;
+
   return (
     <div className="videoMetaData py-2">
       <div className="videoMetaData__top">
-        <h5>video title</h5>
+        <h5>{title}</h5>
         <div className="d-flex justify-content-between align-items-center py-1">
           <span>
-            {numeral(10000).format("0.a")} Views •
-            {moment("2002-20-6").fromNow()}
+            {numeral(viewCount).format("0.a")} Views •
+            {moment(publishedAt).fromNow()}
           </span>
 
           <div className="">
             <span className="mr-3">
-              <MdThumbUp size={26} /> {numeral(10000).format("0.a")}
+              <MdThumbUp size={26} /> {numeral(likeCount).format("0.a")}
             </span>
             <span className="mr-3">
               <MdThumbDown size={26} />
-              {numeral(10000).format("0.a")}
+              {numeral(dislikeCount).format("0.a")}
             </span>
           </div>
         </div>
@@ -35,7 +39,7 @@ const VideoMetaData = () => {
             alt=""
           />
           <div className="d-flex flex-column">
-            <span>Backbench coder </span>
+            <span>{channelTitle} </span>
             <span> {numeral(10000).format("0.a")} Subscribers</span>
           </div>
         </div>
@@ -50,18 +54,7 @@ const VideoMetaData = () => {
           anchorClass="ShowMoreText"
           expanded={false}
         >
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quasi,
-          laborum! Ipsum doloribus id quaerat beatae autem accusamus quibusdam
-          accusantium eaque minima. Suscipit modi dignissimos, error consectetur
-          dolore quaerat veritatis illum repudiandae provident? Minus tempora
-          voluptatem ratione, facere obcaecati, libero architecto ipsum
-          laboriosam aspernatur, consequatur nihil sequi amet impedit eum ipsa?
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quasi,
-          laborum! Ipsum doloribus id quaerat beatae autem accusamus quibusdam
-          accusantium eaque minima. Suscipit modi dignissimos, error consectetur
-          dolore quaerat veritatis illum repudiandae provident? Minus tempora
-          voluptatem ratione, facere obcaecati, libero architecto ipsum
-          laboriosam aspernatur, consequatur nihil sequi amet impedit eum ipsa?
+          {description}
         </ShowMoreText>
       </div>
     </div>

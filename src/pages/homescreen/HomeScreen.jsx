@@ -19,11 +19,7 @@ const HomeScreen = () => {
 
   const fetchData = () => {
 
-    if(activeCategory === 'All')
     dispatch(getPopularVideos());
-    else{
-      dispatch(getVideosByCategories(activeCategory));
-    }
   };
 
   return (
@@ -36,7 +32,7 @@ const HomeScreen = () => {
             dataLength={videos.length}
             hasMore={true}
             next={fetchData}
-            style={{display: 'flex', flexWrap: 'wrap', overflow:'scroll',}}
+            style={{display: 'flex', flexWrap: 'wrap', }}
             loader={
               <div className="spinner-border text-danger d-block mx-auto"></div>
             }

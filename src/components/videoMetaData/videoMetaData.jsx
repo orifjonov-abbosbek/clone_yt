@@ -4,7 +4,7 @@ import numeral from "numeral";
 import { MdThumbUp, MdThumbDown } from "react-icons/md";
 import ShowMoreText from "react-show-more-text";
 import "./videoMetaData.scss";
-import { checkSubscriptionStatus, getChannelsDetails } from "../../redux/actions/channel.action";
+import { getChannelsDetails } from "../../redux/actions/channel.action";
 
 import { useDispatch, useSelector } from "react-redux";
 
@@ -22,7 +22,6 @@ const VideoMetaData = ({ video: { snippet, statistics }, videoId }) => {
   useEffect(() => {
     dispatch(getChannelsDetails(channelId));
 
-    dispatch(checkSubscriptionStatus(channelId))
   }, [dispatch, channelId]);
   return (
     <div className="videoMetaData py-2">

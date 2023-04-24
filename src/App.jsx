@@ -30,13 +30,13 @@ const App = () => {
    console.log(data);
    const navigate = useNavigate()
 
-  //  useEffect(()=> {
+   useEffect(()=> {
         
-  //   if(!data.loading && !data.accessToken) {
-  //    navigate('/auth')      
-  //   }
+    if(!data.loading && !data.accessToken) {
+     navigate('/auth')      
+    }
     
-  //  }, [data.accessToken, data.loading])
+   }, [data.accessToken, data.loading])
 
 
 

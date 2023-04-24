@@ -8,6 +8,7 @@ import LoginScreen from "./pages/loginScreen/LoginScreen";
 import {  Route, Routes, useNavigate  } from "react-router-dom";
 import { useSelector } from "react-redux";
 import WatchScreen from "./pages/watchScreen/watchScreen";
+import SearchScreen from "./pages/SearchScreen";
 const Layout = ({ children }) => {
   const [sidebar, setSidebar] = useState(false);
 
@@ -30,13 +31,13 @@ const App = () => {
    console.log(data);
    const navigate = useNavigate()
 
-   useEffect(()=> {
+  //  useEffect(()=> {
         
-    if(!data.loading && !data.accessToken) {
-     navigate('/auth')      
-    }
+  //   if(!data.loading && !data.accessToken) {
+  //    navigate('/auth')      
+  //   }
     
-   }, [data.accessToken, data.loading])
+  //  }, [data.accessToken, data.loading])
 
 
 
@@ -53,10 +54,10 @@ const App = () => {
       />
 
       <Route
-        path="/search"
+        path="/search/:query"
         element={
           <Layout>
-            <h2>Search</h2>
+            <SearchScreen />
           </Layout>
         }
       />

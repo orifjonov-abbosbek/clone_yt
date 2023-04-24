@@ -9,7 +9,7 @@ export const homeVideosReducer = (
     videos: [],
     loading: false,
     nextPageToken: null,
-    activeCategory: 'All',
+    activeCategory: "All",
   },
   action
 ) => {
@@ -19,10 +19,12 @@ export const homeVideosReducer = (
     case HOME_VIDEOS_SUCCESS:
       return {
         ...state,
-        videos: payload.videos,
-        loading: false,
-         nextPageToken: payload.nextPageToken,
-         activeCategory: payload.category,
+        videos:
+          state.activeCategory === payload.category
+            ? [...state.videos, ...payload.videos]
+            : payload.videos,
+        nextPageToken: payload.nextPageToken,
+        activeCategory: payload.category,
       };
 
     case HOME_VIDEOS_FAIL:
@@ -35,11 +37,11 @@ export const homeVideosReducer = (
       return {
         ...state,
         loading: true,
-        };
+      };
 
     default:
       return {
-        state,
+        ...state,
       };
   }
 };

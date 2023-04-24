@@ -70,7 +70,6 @@ const Video = ({ video }) => {
     <div className="video">
       <div className="video__top">
         <img
-         
           src={medium.url}
           alt=""
         />
